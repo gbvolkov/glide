@@ -8,7 +8,7 @@
 		{
 		  "name": "startdate",
 		  "displayName": "Start Date",
-		  "type": "date-time"
+		  "type": "string"
 		},
 		{
 		  "name": "tzdir",
@@ -18,12 +18,12 @@
 		{
 		  "name": "timelag",
 		  "displayName": "TIme lag",
-		  "type": "date-time"
+		  "type": "string"
 		},
 		{
 			"name": "routetime",
 			"displayName": "Time on route",
-			"type": "date-time"
+			"type": "string"
 		}
 		],
 	  "result": {
