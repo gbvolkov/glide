@@ -17,7 +17,7 @@ window.addEventListener("message", async function(event) {
 	const response = { key };
 	if (result !== undefined) {
 	  // FIXME: Remove `type` once that's in staging
-	  response.result = { value: result };
+	  response.result = { type: "date-time", value: result };
 	}
 	if (error !== undefined) {
 	  response.error = error;
