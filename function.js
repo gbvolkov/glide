@@ -13,6 +13,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	// `glide.json`, or `undefined` if there's an
 	// error or no result can be produced, because a
 	// required input is `undefined`, for example.
-	return new Date();
+	return "Hellowwww";
   }
   
