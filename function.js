@@ -16,7 +16,7 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	routetime = routetime.value ?? "0:00";
 	routetime = Date.parse(routetime);
 
-	startdate = startdate + tzdir * timelag + routetime;
+	//startdate = startdate + tzdir * timelag + routetime;
 	// Your function should return the exact type
 	// you've declared for the `result` in
 	// `glide.json`, or `undefined` if there's an
