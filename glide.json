@@ -1,14 +1,14 @@
 [
 	{
 	  "kind": "column",
-	  "name": "Substring",
-	  "description": "Extracts a substring out of a string. Both start and end indexes are optional. The end index is exclusive.",
-	  "author": "Mark Probst <mark@glideapps.com>",
+	  "name": "AddInterval",
+	  "description": "Adds time interval to the date",
+	  "author": "GBV <gbvolkov@gmail.com>",
 	  "params": [
 		{
-		  "name": "string",
-		  "displayName": "String",
-		  "type": "string"
+		  "name": "startdate",
+		  "displayName": "Start Date",
+		  "type": "date-time"
 		},
 		{
 		  "name": "start",
