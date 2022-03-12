@@ -8,7 +8,7 @@
 		{
 		  "name": "startdate",
 		  "displayName": "Start Date",
-		  "type": "string"
+		  "type": "date-time"
 		},
 		{
 		  "name": "tzdir",
@@ -27,7 +27,7 @@
 		}
 		],
 	  "result": {
-		"type": "string"
+		"type": "date-time"
 	  }
 	}
   ]
