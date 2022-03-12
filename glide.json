@@ -11,18 +11,23 @@
 		  "type": "date-time"
 		},
 		{
-		  "name": "start",
-		  "displayName": "Start index",
+		  "name": "tzdir",
+		  "displayName": "Time zone direction",
 		  "type": "number"
 		},
 		{
-		  "name": "end",
-		  "displayName": "End index",
-		  "type": "number"
+		  "name": "timelag",
+		  "displayName": "TIme lag",
+		  "type": "date-time"
+		},
+		{
+			"name": "routetime",
+			"displayName": "Time on route",
+			"type": "date-time"
 		}
-	  ],
+		],
 	  "result": {
-		"type": "string"
+		"type": "date-time"
 	  }
 	}
   ]
