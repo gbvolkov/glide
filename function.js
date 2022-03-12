@@ -8,8 +8,15 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	// extract the `.value`s and assign default
 	// values.
 	
-	startdate = startdate.value ?? "";
+	startdate = startdate.value ?? Date();
+	startdate = Date.parse(startdate);
+	tzdir = tzdir.value ?? 0;
+	timelag = timelag.value ?? "0:00";
+	timelag = Date.parse(timelag);
+	routetime = routetime.value ?? "0:00";
+	routetime = Date.parse(routetime);
 
+	
 	// Your function should return the exact type
 	// you've declared for the `result` in
 	// `glide.json`, or `undefined` if there's an
