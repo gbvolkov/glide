@@ -7,7 +7,7 @@ window.function = function (str, start, end) {
 	// or it's `undefined`.  This is a good place to
 	// extract the `.value`s and assign default
 	// values.
-	str = str.value ?? "";
+	str = "qweqweqweqwe"; //str.value ?? "";
 	start = start.value ?? 0;
 	end = end.value;
   
