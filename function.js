@@ -15,7 +15,7 @@ function timeParse(timeInterval) {
 	return dt;
 }
 
-window.function = function (startdate, tzdir, timelagStr, routelagStr) {
+window.function = function (startdate, tzdir, timelagStr, routetimeStr) {
 	// For each parameter, its `.value` contains
 	// either its value in the type you've declared,
 	// or it's `undefined`.  This is a good place to
