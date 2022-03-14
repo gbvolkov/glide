@@ -23,7 +23,7 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	routetime = Date.parse(timeParse(routetimeStr));
 	tzoffset = (new Date(startdate)).getTimezoneOffset()*60*1000;
 	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate - tzdir*timelag + routetime));
-	return startdate - tzdir*timelag + routetime + tzoffset;
+	return startdate - tzdir*timelag + routetime - tzoffset;
 }
 
 
