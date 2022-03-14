@@ -27,7 +27,7 @@
 		}
 		],
 	  "result": {
-		"type": "string"
+		"type": "date-time"
 	  }
 	}
   ]
