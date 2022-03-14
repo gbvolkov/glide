@@ -42,7 +42,7 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	// error or no result can be produced, because a
 	// required input is `undefined`, for example.
 	startdate = startdate.value ?? Date.now();
-	tzdir = tzdir.value ?? 0;
+	//tzdir = tzdir.value ?? 0;
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
