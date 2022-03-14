@@ -26,9 +26,9 @@ window.function = function (startdate, tzdir, timelagStr, routetimeStr) {
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelagStr = timelagStr.value ?? "0:00";
-	timelag = timeParse(timelagStr);
+	timelag = Date(timeParse(timelagStr));
 	routetimeStr = routetimeStr.value ?? "0:00";
-	routetime = timeParse(routetimeStr);
+	routetime = Date(timeParse(routetimeStr));
 
 	startdate = startdate + timelag + routetime;
 	// Your function should return the exact type
