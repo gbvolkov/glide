@@ -21,13 +21,14 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	timelag = Date.parse(timeParse(timelagStr));
 	routetime = Date.parse(timeParse(routetimeStr));
 
-	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate + tzdir*timelag + routetime));
+	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate - tzdir*timelag + routetime));
 	return startdate - tzdir*timelag + routetime;
 }
 
-//newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
-//console.log(newdt + "=" + new Date(newdt));
-
+/*
+newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
+console.log(newdt + "=" + new Date(newdt));
+*/
 
 window.function = function (startdate, tzdir, timelag, routetime) {
 	// For each parameter, its `.value` contains
@@ -46,6 +47,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
-	return calcDateTime(startdate, tzdir, timelag, routetime);
+	return new Date(calcDateTime(startdate, tzdir, timelag, routetime));
   }
   
