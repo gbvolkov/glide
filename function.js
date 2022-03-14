@@ -3,6 +3,7 @@
 // same order.
 function timeParse(timeInterval) {
 	const dt = new Date(0);
+	//dt.timezoneOffset = offset;
 	const tmParts = timeInterval.split(":");
 
 	const hours = +tmParts[0];
@@ -10,13 +11,13 @@ function timeParse(timeInterval) {
 
 	dt.setHours(hours);
 	dt.setMinutes(mins);
-
 	//console.log(timeInterval + "=" + hours + ":" + mins);
 	return dt;
 }
 
 function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	startdate = Date.parse(startdate);
+	//offset = (new Date(startdate)).getTimezoneOffset();
 	timelag = Date.parse(timeParse(timelagStr));
 	routetime = Date.parse(timeParse(routetimeStr));
 
@@ -24,7 +25,8 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	return startdate + timelag + routetime;
 }
 
-//calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
+//newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
+//console.log(newdt + "=" + new Date(newdt));
 
 
 window.function = function (startdate, tzdir, timelag, routetime) {
@@ -44,6 +46,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
-	return calcDateTime(startdate, tzdir, timelag, routetime);
+	return new Date(calcDateTime(startdate, tzdir, timelag, routetime));
   }
   
