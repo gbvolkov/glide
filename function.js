@@ -1,6 +1,20 @@
 // The function here takes the parameters that you
 // have declared in the `glide.json` file, in the
 // same order.
+
+function timeParse(timeInterval) {
+	const dt = new Date(0);
+	const tmParts = timeInterval.split(":");
+
+	const hours = +tmParts[0];
+	const mins = +tmParts[1];
+
+	dt.setHours(hours);
+	dt.setMinutes(mins);
+
+	return dt;
+}
+
 window.function = function (startdate, tzdir, timelag, routetime) {
 	// For each parameter, its `.value` contains
 	// either its value in the type you've declared,
@@ -12,9 +26,10 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelag = timelag.value ?? "0:00";
-	timelag = Date.parse(timelag);
+	tmLag = timeParse(timelag);
+	//timelag = Date.parse(timelag);
 	routetime = routetime.value ?? "0:00";
-	routetime = Date.parse(routetime);
+	//routetime = Date.parse(routetime);
 
 	//startdate = startdate + tzdir * timelag + routetime;
 	// Your function should return the exact type
@@ -22,6 +37,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	// `glide.json`, or `undefined` if there's an
 	// error or no result can be produced, because a
 	// required input is `undefined`, for example.
-	return timelag;
+	return tmLag.toString();
   }
   
