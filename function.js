@@ -22,7 +22,7 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	routetime = Date.parse(timeParse(routetimeStr));
 
 	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate + tzdir*timelag + routetime));
-	return startdate + tzdir*timelag + routetime;
+	return startdate + -1*tzdir*timelag + routetime;
 }
 
 //newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
