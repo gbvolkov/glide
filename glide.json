@@ -18,7 +18,7 @@
 		{
 		  "name": "timelag",
 		  "displayName": "TIme lag",
-		  "type": "string"
+		  "type": "date-time"
 		},
 		{
 			"name": "routetime",
