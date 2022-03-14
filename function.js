@@ -17,13 +17,14 @@ function timeParse(timeInterval) {
 
 function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	startdate = startdate.value ?? Date().now();
+	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelagStr = timelagStr.value ?? "0:00";
 	timelag = Date(timeParse(timelagStr));
 	routetimeStr = routetimeStr.value ?? "0:00";
 	routetime = Date(timeParse(routetimeStr));
 
-	return startdate + timelag + routetime;startdate = Date.parse(startdate);
+	return startdate + timelag + routetime;
 	
 }
 
