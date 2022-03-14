@@ -15,7 +15,7 @@ function timeParse(timeInterval) {
 	return dt;
 }
 
-window.function = function (startdate, tzdir, timelag, routetime) {
+window.function = function (startdate, tzdir, timelagStr, routelagStr) {
 	// For each parameter, its `.value` contains
 	// either its value in the type you've declared,
 	// or it's `undefined`.  This is a good place to
@@ -25,18 +25,17 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	startdate = startdate.value ?? Date();
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
-	timelag = timelag.value ?? "0:00";
-	tmLag = timeParse(timelag);
-	//timelag = Date.parse(timelag);
-	routetime = routetime.value ?? "0:00";
-	//routetime = Date.parse(routetime);
+	timelagStr = timelagStr.value ?? "0:00";
+	timelag = timeParse(timelagStr);
+	routetimeStr = routetimeStr.value ?? "0:00";
+	routetime = timeParse(routetimeStr);
 
-	//startdate = startdate + tzdir * timelag + routetime;
+	startdate = startdate + tzdir * timelag + routetime;
 	// Your function should return the exact type
 	// you've declared for the `result` in
 	// `glide.json`, or `undefined` if there's an
 	// error or no result can be produced, because a
 	// required input is `undefined`, for example.
-	return tmLag.toString();
+	return startdate;
   }
   
