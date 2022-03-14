@@ -47,8 +47,8 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
-	newdt = calcDateTime(startdate, tzdir, timelag, routetime)
+	newdt = new Date(calcDateTime(startdate, tzdir, timelag, routetime));
 
-	return newdt;
+	return newdt.toString();
   }
   
