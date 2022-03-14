@@ -9,9 +9,10 @@ function timeParse(timeInterval) {
 	const hours = +tmParts[0];
 	const mins = +tmParts[1];
 
-	dt.setHours(hours);
-	dt.setMinutes(mins);
-	//console.log(timeInterval + "=" + hours + ":" + mins);
+	//dt.setUTCDate(0);
+	dt.setUTCHours(hours);
+	dt.setUTCMinutes(mins);
+	//console.log(timeInterval + "=" + hours + ":" + mins + "(" + dt.getTime() + ")=" + dt.toString());
 	return dt;
 }
 
@@ -25,10 +26,12 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	return startdate - tzdir*timelag + routetime;
 }
 
+
 /*
-newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
+newdt = calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "1:00", "2:00");
 console.log(newdt + "=" + new Date(newdt));
 */
+
 
 window.function = function (startdate, tzdir, timelag, routetime) {
 	// For each parameter, its `.value` contains
