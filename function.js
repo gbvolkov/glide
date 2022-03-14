@@ -20,9 +20,9 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelagStr = timelagStr.value ?? "0:00";
-	timelag = Date(timeParse(timelagStr));
+	timelag = Date.parse(timeParse(timelagStr));
 	routetimeStr = routetimeStr.value ?? "0:00";
-	routetime = Date(timeParse(routetimeStr));
+	routetime = Date.parse(timeParse(routetimeStr));
 
 	return startdate + timelag + routetime;
 	
