@@ -12,7 +12,7 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelag = timelag.value ?? 0;
-	timelag = Date.parse(timelag);
+	//timelag = Date.parse(timelag);
 	routetime = routetime.value ?? "0:00";
 	routetime = Date.parse(routetime);
 
