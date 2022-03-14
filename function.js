@@ -26,6 +26,7 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 
 //calcDateTime(new Date(2018, 11, 24, 10, 33, 0, 0), -1, "3:00", "4:20");
 
+
 window.function = function (startdate, tzdir, timelag, routetime) {
 	// For each parameter, its `.value` contains
 	// either its value in the type you've declared,
@@ -43,5 +44,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
-	return calcDateTime(startdate, tzdir, timelag, routetime);
+	return startdate;//calcDateTime(startdate, tzdir, timelag, routetime);
   }
+  
