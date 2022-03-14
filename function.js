@@ -21,10 +21,10 @@ function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
 	routetime = Date.parse(timeParse(routetimeStr));
 
 	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate + tzdir*timelag + routetime));
-	return new Date(startdate + timelag + routetime);
+	return startdate + timelag + routetime;
 }
 
-//calcDateTime(new Date(2018, 11, 24, 10, 33, 0, 0), -1, "3:00", "4:20");
+//calcDateTime(new Date("2021-08-01T06:00:00.000Z"), -1, "3:00", "4:20");
 
 
 window.function = function (startdate, tzdir, timelag, routetime) {
@@ -44,6 +44,6 @@ window.function = function (startdate, tzdir, timelag, routetime) {
 	timelag = timelag.value ?? "0:00";
 	routetime = routetime.value ?? "0:00";
 
-	return startdate;//calcDateTime(startdate, tzdir, timelag, routetime);
+	return calcDateTime(startdate, tzdir, timelag, routetime);
   }
   
