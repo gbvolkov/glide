@@ -22,7 +22,7 @@ window.function = function (startdate, tzdir, timelagStr, routetimeStr) {
 	// extract the `.value`s and assign default
 	// values.
 	
-	startdate = startdate.value ?? Date();
+	startdate = startdate.value ?? Date().now();
 	startdate = Date.parse(startdate);
 	tzdir = tzdir.value ?? 0;
 	timelagStr = timelagStr.value ?? "0:00";
