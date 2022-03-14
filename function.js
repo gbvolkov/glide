@@ -1,7 +1,6 @@
 // The function here takes the parameters that you
 // have declared in the `glide.json` file, in the
 // same order.
-
 function timeParse(timeInterval) {
 	const dt = new Date(0);
 	const tmParts = timeInterval.split(":");
@@ -12,23 +11,22 @@ function timeParse(timeInterval) {
 	dt.setHours(hours);
 	dt.setMinutes(mins);
 
+	//console.log(timeInterval + "=" + hours + ":" + mins);
 	return dt;
 }
 
 function calcDateTime(startdate, tzdir, timelagStr, routetimeStr) {
-	startdate = startdate.value ?? Date().now();
 	startdate = Date.parse(startdate);
-	tzdir = tzdir.value ?? 0;
-	timelagStr = timelagStr.value ?? "0:00";
 	timelag = Date.parse(timeParse(timelagStr));
-	routetimeStr = routetimeStr.value ?? "0:00";
 	routetime = Date.parse(timeParse(routetimeStr));
 
-	return startdate + timelag + routetime;
-	
+	//console.log(new Date(startdate) + "+" + new Date(timelag) + "+" + new Date(routetime) + "=" + new Date(startdate + tzdir*timelag + routetime));
+	return new Date(startdate + timelag + routetime);
 }
 
-window.function = function (startdate, tzdir, timelagStr, routetimeStr) {
+//calcDateTime(new Date(2018, 11, 24, 10, 33, 0, 0), -1, "3:00", "4:20");
+
+window.function = function (startdate, tzdir, timelag, routetime) {
 	// For each parameter, its `.value` contains
 	// either its value in the type you've declared,
 	// or it's `undefined`.  This is a good place to
@@ -40,6 +38,10 @@ window.function = function (startdate, tzdir, timelagStr, routetimeStr) {
 	// `glide.json`, or `undefined` if there's an
 	// error or no result can be produced, because a
 	// required input is `undefined`, for example.
-	return calcDateTime(startdate, tzdir, timelagStr, routetimeStr);
+	startdate = startdate.value ?? Date.now();
+	tzdir = tzdir.value ?? 0;
+	timelag = timelag.value ?? "0:00";
+	routetime = routetime.value ?? "0:00";
+
+	return calcDateTime(startdate, tzdir, timelag, routetime);
   }
-  
